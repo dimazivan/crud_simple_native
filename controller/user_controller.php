@@ -1,16 +1,19 @@
 <?php
 
-include '../config/database.php';
-$db = new database();
+// include '../config/database.php';
+include '../model/user.php';
+
+// $db = new database();
+$user = new user();
 
 $aksi = $_GET['aksi'];
 if($aksi == "tambah") {
-    $db->input($_POST['nama'], $_POST['alamat'], $_POST['usia']);
+    $user->input($_POST['nama'], $_POST['alamat'], $_POST['usia']);
     header("location:../view/show_data.php");
 } elseif($aksi == "hapus") {
-    $db->hapus($_GET['id']);
+    $user->hapus($_GET['id']);
     header("location:../view/show_data.php");
 } elseif($aksi == "update") {
-    $db->update($_POST['id'], $_POST['nama'], $_POST['alamat'], $_POST['usia']);
+    $user->update($_POST['id'], $_POST['nama'], $_POST['alamat'], $_POST['usia']);
     header("location:../view/show_data.php");
 }

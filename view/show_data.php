@@ -1,6 +1,9 @@
 <?php
-include '../config/database.php';
-$db = new database();
+// include '../config/database.php';
+include '../model/user.php';
+
+// $db = new database();
+$user = new user();
 ?>
 <h1>CRUD OOP PHP</h1>
 <h2>Data User</h2>
@@ -16,7 +19,7 @@ $db = new database();
 	</tr>
 	<?php
     $no = 1;
-foreach($db->tampil_data() as $data) {
+foreach($user->tampil_data() as $data) {
     ?>
 	<tr>
 		<td><?php echo $no++; ?></td>

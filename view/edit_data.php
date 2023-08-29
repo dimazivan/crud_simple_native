@@ -1,6 +1,9 @@
 <?php
-include '../config/database.php';
-$db = new database();
+// include '../config/database.php';
+include '../model/user.php';
+
+// $db = new database();
+$user = new user();
 ?>
 
 <h1>CRUD OOP PHP</h1>
@@ -8,7 +11,7 @@ $db = new database();
 
 <form action="../controller/user_controller.php?aksi=update" method="post">
 	<?php
-foreach($db->edit($_GET['id']) as $d) {
+foreach($user->edit($_GET['id']) as $d) {
     ?>
 	<table>
 		<tr>
