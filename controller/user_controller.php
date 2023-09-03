@@ -2,6 +2,7 @@
 
 // include '../config/database.php';
 include '../model/user.php';
+// include '../model/user.php';
 
 // $db = new database();
 $user = new user();
@@ -9,11 +10,15 @@ $user = new user();
 $aksi = $_GET['aksi'];
 if($aksi == "tambah") {
     $user->input($_POST['nama'], $_POST['alamat'], $_POST['usia']);
-    header("location:../view/show_data.php");
+    header("location:../view/index.php");
+    // header("location:index.php?page=Tampil_Bahan");
+    // header("location:../view/show_data.php");
 } elseif($aksi == "hapus") {
     $user->hapus($_GET['id']);
-    header("location:../view/show_data.php");
+    header("location:../view/index.php");
+    // header("location:../view/show_data.php");
 } elseif($aksi == "update") {
     $user->update($_POST['id'], $_POST['nama'], $_POST['alamat'], $_POST['usia']);
-    header("location:../view/show_data.php");
+    header("location:../view/index.php");
+    // header("location:../view/show_data.php");
 }

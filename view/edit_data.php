@@ -1,6 +1,7 @@
 <?php
 // include '../config/database.php';
 include '../model/user.php';
+// include '../model/user.php';
 
 // $db = new database();
 $user = new user();

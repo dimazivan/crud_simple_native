@@ -1,6 +1,8 @@
 <?php
 
 include '../config/database.php';
+// require_once 'config/database.php';
+// include 'config/database.php';
 class user
 {
     // public $host = "localhost";
